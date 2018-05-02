@@ -1,0 +1,29 @@
+<html>
+    <head>
+      <title>Playground</title>
+      <style>
+        .playground{
+            background-color:{{this_color}};
+            display:inline-block;
+            height:200px;
+            width:200px;
+            margin:10px;
+            padding:5px;
+        }
+        h3 {
+            color: maroon;
+            margin-left: 40px;
+        } 
+        </style>
+    </head>
+    <body>
+      <h3>Welcome!</h3>
+      {% for x in range(0,times): %}
+      <div class = 'playground'></div>
+      {% endfor %}
+      <!-- here is an example of embedding an if statement in our code -->
+      {% if phrase == "hello" %}
+      <p>The phrase says hello</p>
+      {% endif %}
+    </body>
+</html>

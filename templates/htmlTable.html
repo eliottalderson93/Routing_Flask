@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Playground</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <style >
+    </style>
+</head>
+
+<body>
+    <table class ="table table-striped">
+    <thead>
+        <tr>
+            <th>User #</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Full Name</th>
+            <th>FULL NAME</th>
+            <th>Length of name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in range(0,(users|length)): %}
+        <tr>
+            {% for k in range (0,6): %} {% if(k==0): %}
+            <td>{{i+1}}</td>
+            {% elif(k==1): %}
+            <td>{{users[i]['first_name']}}</td>
+            {% elif(k==2): %}
+            <td>{{users[i]['last_name']}}</td>
+            {% elif(k==3): %}
+            <td>{{users[i]['first_name']+' '+users[i]['last_name']}}</td>
+            {% elif(k==4): %}
+            <td>{{(users[i]['first_name']+' '+users[i]['last_name']).upper()}}</td>
+            {% else: %}
+            <td>{{(users[i]['first_name']+users[i]['last_name'])|length}}</td>
+            {% endif %} {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+
+</html>

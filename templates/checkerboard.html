@@ -1,0 +1,50 @@
+<html>
+    <head>
+      <title>Playground</title>
+      <style>
+        .checkerLight{
+            background-color:{{color_light}};
+            display:block;
+            height:{{num_px_h}}px; /*num_px_w = block_px*y */
+            width:{{num_px_w}}px; /*num_px_w = block_px*x */
+            margin:0px;
+            border:1px black solid;
+        }
+        .checkerDarkEven{
+            background-color:{{color_dark}};
+            display:inline-block;
+            height:{{num_px_h}}px;
+            width:{{block_px}}px;
+            margin-left:47px;
+
+            /* border:1px black solid; */
+        }
+        .checkerDarkOdd{
+            background-color:{{color_dark}};
+            display:inline-block;
+            height:{{num_px_h}}px;
+            width:{{block_px}}px;
+            margin-right:46px;
+            /* border:1px black solid; */
+        }
+        h3 {
+            color: maroon;
+            margin-left: 40px;
+        } 
+        </style>
+    </head>
+    <body>
+      <h3>Welcome!</h3>
+      {% for i in range(0,y): %}
+      <div class = 'checkerLight'><!--rows-->
+        {%for k in range(0,x)%}
+        {% if i%2 ==0: %}
+            <div class = 'checkerDarkEven'></div> <!--cols-->
+        {% else: %}
+            <div class = 'checkerDarkOdd'></div> <!--cols-->
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </body>
+</html>
